@@ -26,7 +26,7 @@
 
       <form action="../../index3.html" method="post">
         <div class="input-group mb-3">
-          <input type="email" class="form-control" placeholder="Email">
+          <input type="email" id="email" class="form-control" placeholder="Email">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-envelope"></span>
@@ -42,23 +42,13 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-8">
-            <div class="icheck-primary">
-              <input type="checkbox" id="remember">
-              <label for="remember">
-                Remember Me
-              </label>
-            </div>
-          </div>
           <!-- /.col -->
           <div class="col-4">
-            <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+            <button type="submit" class="btn btn-primary btn-block" id="loginVendor">Sign In</button>
           </div>
           <!-- /.col -->
         </div>
       </form>
-
-      
       <!-- /.social-auth-links -->
 
       <p class="mb-1">
@@ -88,6 +78,21 @@
     $(e).removeClass(old_class).addClass(new_class);
     $('#password').attr('type', type);
   }
+
+
+  $('#loginVendor').click(function() => {
+    event.preventDefault(); 
+    var formdata = new Formdata();
+    $.ajax({
+        type: "POST",
+        url: '/validate_vendor',
+        data: formdata, // serializes the form's elements.
+        success: function(res)
+        {
+          alert(res); // show response from the php script.
+        }
+    });
+  });
 
 </script>
 

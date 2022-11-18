@@ -33,7 +33,7 @@ Route::prefix('vendor')->group(function () {
     Route::get('/logout',[VendorController::class,'index']);
     
     // Post Routes
-    Route::post('/validate_vendor',[VendorController::class,'index']);
+    Route::post('/validate_vendor',[VendorController::class,'validate_vendor']);
     Route::post('/update_profile',[VendorController::class,'index']);
     Route::post('/add_invoice',[VendorController::class,'index']);
     Route::post('/edit_invoice',[VendorController::class,'index']);
