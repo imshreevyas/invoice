@@ -26,8 +26,8 @@ Route::prefix('vendor')->group(function () {
     Route::get('/dashboard',[VendorController::class,'index']);
     Route::get('/profile',[VendorController::class,'index']);
     Route::get('/invoices',[VendorController::class,'index']);
-    Route::get('/addInvoice',[VendorController::class,'index']);
-    Route::get('/editInvoice/${1}',[VendorController::class,'index']);
+    Route::get('/addInvoice',[VendorController::class,'addInvoice']);
+    Route::get('/editInvoice/${i}',[VendorController::class,'index']);
     Route::get('/support',[VendorController::class,'index']);
     Route::get('/addSupport',[VendorController::class,'index']);
     Route::get('/logout',[VendorController::class,'index']);
